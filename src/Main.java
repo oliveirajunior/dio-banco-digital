@@ -7,6 +7,19 @@ public class Main {
         Conta corrente = new ContaCorrente(cliente1);
         Conta poupanca = new ContaPoupanca(cliente2);
 
+        Banco banco = new Banco();
+
+        System.out.println(banco.getNome());
+
+        banco.abrirConta(corrente);
+        banco.abrirConta(poupanca);
+
+        System.out.println(banco.getContaList());
+
+        System.out.println(banco.pesquisarContaCPF(123456789));
+
+        System.out.println(banco.pesquisarContaNome("Clark Kent"));
+
         corrente.imprimirExtrato();
         poupanca.imprimirExtrato();
 
@@ -16,6 +29,9 @@ public class Main {
 
         corrente.imprimirExtrato();
         poupanca.imprimirExtrato();
+
+        banco.listarClientes();
+
 
     }
 }

@@ -26,6 +26,10 @@ public abstract class Conta implements IConta {
         return saldo;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
     protected void imprimirInfos() {
         System.out.println(String.format("Cliente: %s", this.cliente.getNome()));
         System.out.println(String.format("Agência: %d", this.agencia));
@@ -49,4 +53,13 @@ public abstract class Conta implements IConta {
         contaDestino.depositar(valor);
     }
 
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "agencia=" + agencia +
+                ", numero=" + numero +
+                ", saldo=" + saldo +
+                ", cliente=" + cliente +
+                '}';
+    }
 }
